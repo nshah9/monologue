@@ -1,12 +1,14 @@
-<section data-tags="<%= post.tags.map(&:name).join(' ') %>">
-  <%= render partial: 'monologue/posts/post_header', locals: {post: post} %>
+<li data-tags="<%= post.tags.map(&:name).join(' ') %>">
+  <%= render partial: 'monologue/posts/post_header', locals: {post: post, show: false} %>
 
-  <div class="content" data-monologue="content">
+  <div class="content half-gap-top" data-monologue="content">
     <%= truncate_html(post.content, length: Monologue::Config.preview_size, omission: '...') %>
   </div>
 
-  <div class="tags" data-monologue="tags">
+  <div class="tags half-gap-top" data-monologue="tags">
     <%= render post.tags %>
   </div>
-  <%= link_to t(".readmore"), post.full_url, class: "button" %>
-</section>
+  <div class="half-gap-top">
+    <%= link_to t(".readmore"), post.full_url, class: "button" %>
+  </div>
+</li>

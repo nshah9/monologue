@@ -1,4 +1,8 @@
-<%= render @posts %>
+<% if @posts.any? %>
+  <ul class="uc-list-table">
+    <%= render @posts %>
+  </ul>
+<% end %>
 
 <% if @page %>
 	<%= render partial: "pagination" %>

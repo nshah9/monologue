@@ -7,12 +7,12 @@
 <% end %>
 
 <article>
-  <%= render partial: 'monologue/posts/post_header', locals: {post: @post }%>
-  <div class="content" data-monologue="content">
+  <%= render partial: 'monologue/posts/post_header', locals: {post: @post, show: true}%>
+  <div class="content half-gap-top" data-monologue="content">
     <%= raw @post.content %>
   </div>
 
-	<div class="tags" data-monologue="tags">
+	<div class="tags half-gap-top" data-monologue="tags">
     <%= render @post.tags %>
   </div>
 
